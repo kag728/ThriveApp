@@ -42,7 +42,7 @@ struct SignUpView: View {
                         .font(.title)
                         .frame(minWidth: 0, maxWidth: 200)
                         .padding()
-                        .background(LinearGradient(gradient: Gradient(colors: [Color("ThriveBlue"), Color(red: 3/255, green: 161/255, blue: 235/255)]), startPoint: .leading, endPoint: .trailing))
+                        .background(LinearGradient(gradient: Gradient(colors: [Color("ThriveBlue"), Color("GradientEnd")]), startPoint: .leading, endPoint: .trailing))
                         .cornerRadius(40)
                 }
             }

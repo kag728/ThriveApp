@@ -15,11 +15,11 @@ class RKColorSettings : ObservableObject {
     @Published var textColor: Color = Color.primary
     @Published var todayColor: Color = Color.white
     @Published var selectedColor: Color = Color.white
-    @Published var disabledColor: Color = Color.gray
+    @Published var disabledColor: Color = Color(.tertiaryLabel)
     @Published var betweenStartAndEndColor: Color = Color.white
     // background colors
-    @Published var textBackColor: Color = Color.clear
-    @Published var todayBackColor: Color = Color.gray
+    @Published var textBackColor: Color = Color(.systemBackground)
+    @Published var todayBackColor: Color = Color(.systemGray)
     @Published var selectedBackColor: Color = Color.red
     @Published var disabledBackColor: Color = Color.clear
     @Published var betweenStartAndEndBackColor: Color = Color.blue
@@ -27,7 +27,7 @@ class RKColorSettings : ObservableObject {
     @Published var weekdayHeaderColor: Color = Color.primary
     @Published var monthHeaderColor: Color = Color.primary
     // headers background colors
-    @Published var weekdayHeaderBackColor: Color = Color.clear
-    @Published var monthBackColor: Color = Color.clear
+    @Published var weekdayHeaderBackColor: Color = Color(.systemBackground)
+    @Published var monthBackColor: Color = Color(.systemBackground)
 
 }

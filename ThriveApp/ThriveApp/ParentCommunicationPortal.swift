@@ -94,7 +94,7 @@ struct ParentCommunicationPortal: View {
             Spacer()
             TextField("Update here", text: $post)
                 .padding()
-                .border(Color.black, width: 1)
+                .border(Color(.separator), width: 1)
             
             Button(action: {self.appendPost(str: self.post)}) {
                 Text("Post!")
@@ -102,7 +102,7 @@ struct ParentCommunicationPortal: View {
                     .font(.title)
                     .frame(minWidth: 0, maxWidth: 130)
                     .padding()
-                    .background(LinearGradient(gradient: Gradient(colors: [Color("ThriveBlue"), Color(red: 3/255, green: 161/255, blue: 235/255)]), startPoint: .leading, endPoint: .trailing))
+                    .background(LinearGradient(gradient: Gradient(colors: [Color("ThriveBlue"), Color("GradientEnd")]), startPoint: .leading, endPoint: .trailing))
                     .cornerRadius(40)
             }
             .padding(.top)

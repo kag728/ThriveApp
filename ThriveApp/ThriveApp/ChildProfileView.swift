@@ -12,6 +12,8 @@ import Firebase
 
 struct ChildProfileView: View {
     
+    @EnvironmentObject var themeManager: ThemeManager
+    
     func signOut(){
         let firebaseAuth = Auth.auth();
         do {
@@ -93,14 +95,29 @@ struct ChildProfileView: View {
             .padding(.top)
             Spacer()
             
-            Button(action: {self.signOut()}) {
-                Text("Sign Out")
+            HStack(spacing: 20) {
+                Button(action: {self.signOut()}) {
+                    Text("Sign Out")
+                        .foregroundColor(.white)
+                        .font(.title)
+                        .frame(minWidth: 0, maxWidth: 150)
+                        .padding()
+                        .background(LinearGradient(gradient: Gradient(colors: [Color("ThriveBlue"), Color("GradientEnd")]), startPoint: .leading, endPoint: .trailing))
+                        .cornerRadius(40)
+                }
+                
+                Button(action: { self.themeManager.cycleTheme() }) {
+                    HStack {
+                        Image(systemName: themeManager.themeIcon)
+                        Text(themeManager.themeLabel)
+                    }
                     .foregroundColor(.white)
-                    .font(.title)
-                    .frame(minWidth: 0, maxWidth: 150)
+                    .font(.body)
+                    .frame(minWidth: 0, maxWidth: 100)
                     .padding()
-                    .background(LinearGradient(gradient: Gradient(colors: [Color("ThriveBlue"), Color(red: 3/255, green: 161/255, blue: 235/255)]), startPoint: .leading, endPoint: .trailing))
+                    .background(LinearGradient(gradient: Gradient(colors: [Color("ThriveBlue"), Color("GradientEnd")]), startPoint: .leading, endPoint: .trailing))
                     .cornerRadius(40)
+                }
             }
             .navigationBarTitle(Text("Adam's Profile"), displayMode: .inline)
         }
@@ -109,6 +126,6 @@ struct ChildProfileView: View {
 
 struct ChildProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ChildProfileView()
+        ChildProfileView().environmentObject(ThemeManager())
     }
 }

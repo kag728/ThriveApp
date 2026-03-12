@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var themeManager: ThemeManager
+
     var body: some View {
         NavigationView {
             VStack {
@@ -18,9 +20,11 @@ struct ContentView: View {
                 Text("Thrive")
                     .font(.largeTitle)
                     .fontWeight(.semibold)
+                    .foregroundColor(.primary)
                     .padding(5)
                 Text("Thriving on the Spectrum")
                     .font(.title)
+                    .foregroundColor(.secondary)
                     .padding(5)
                 NavigationLink(destination: SignInView() ) {
                     Text("Sign In")
@@ -28,7 +32,7 @@ struct ContentView: View {
                     .font(.title)
                     .frame(minWidth: 0, maxWidth: 200)
                     .padding()
-                    .background(LinearGradient(gradient: Gradient(colors: [Color("ThriveBlue"), Color(red: 3/255, green: 161/255, blue: 235/255)]), startPoint: .leading, endPoint: .trailing))
+                    .background(LinearGradient(gradient: Gradient(colors: [Color("ThriveBlue"), Color("GradientEnd")]), startPoint: .leading, endPoint: .trailing))
                     .cornerRadius(40)
 
                 }.padding()
@@ -38,7 +42,7 @@ struct ContentView: View {
                     .font(.title)
                     .frame(minWidth: 0, maxWidth: 200)
                     .padding()
-                    .background(LinearGradient(gradient: Gradient(colors: [Color("ThriveBlue"), Color(red: 3/255, green: 161/255, blue: 235/255)]), startPoint: .leading, endPoint: .trailing))
+                    .background(LinearGradient(gradient: Gradient(colors: [Color("ThriveBlue"), Color("GradientEnd")]), startPoint: .leading, endPoint: .trailing))
                     .cornerRadius(40)
                 }
                 NavigationLink(destination: ChildProfileView()) {
@@ -47,11 +51,13 @@ struct ContentView: View {
                     .font(.title)
                     .frame(minWidth: 0, maxWidth: 200)
                     .padding()
-                    .background(LinearGradient(gradient: Gradient(colors: [Color("ThriveBlue"), Color(red: 3/255, green: 161/255, blue: 235/255)]), startPoint: .leading, endPoint: .trailing))
+                    .background(LinearGradient(gradient: Gradient(colors: [Color("ThriveBlue"), Color("GradientEnd")]), startPoint: .leading, endPoint: .trailing))
                     .cornerRadius(40)
                 }.padding()
             }
+            .background(Color(.systemBackground))
         }
+        .preferredColorScheme(themeManager.resolvedColorScheme)
     }
 }
 
@@ -59,6 +65,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(ThemeManager())
     }
 }
