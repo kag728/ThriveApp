@@ -17,26 +17,26 @@ struct ToolDetailView: View {
                 
                 Button(action:{}) {
                    Text("Make Active Tool")
-                    .foregroundColor(.blue)
+                    .foregroundColor(Color("ThriveBlue"))
                     .font(.title)
                     .padding()
-                    .border(Color.blue, width: 4)
+                    .border(Color("ThriveBlue"), width: 4)
                 }
                 .padding(.top)
                 Button(action:{}) {
                    Text("Change Tool Image")
-                    .foregroundColor(.blue)
+                    .foregroundColor(Color("ThriveBlue"))
                     .font(.title)
                     .padding()
-                    .border(Color.blue, width: 4)
+                    .border(Color("ThriveBlue"), width: 4)
                 }
                 .padding(.top)
                 Button(action:{}) {
                    Text("Change Tool Name")
-                    .foregroundColor(.blue)
+                    .foregroundColor(Color("ThriveBlue"))
                     .font(.title)
                     .padding()
-                    .border(Color.blue, width: 4)
+                    .border(Color("ThriveBlue"), width: 4)
                 }
                 .padding(.top)
                 Button(action:{}) {

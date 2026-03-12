@@ -28,13 +28,7 @@ struct ScheduleCal : View {
                 Text("Adam's Schedule").font(.largeTitle)
                 RKViewController(isPresented: self.$singleIsPresented, rkManager: self.rkManager1)
                 Button(action: {self.getTextFromDate(date: self.rkManager1.selectedDate)}) {
-                    Text("Edit")
-                        .foregroundColor(.white)
-                        .font(.title)
-                        .frame(minWidth: 0, maxWidth: 100)
-                        .padding()
-                        .background(LinearGradient(gradient: Gradient(colors: [Color("ThriveBlue"), Color(red: 3/255, green: 161/255, blue: 235/255)]), startPoint: .leading, endPoint: .trailing))
-                        .cornerRadius(40)
+                    thriveGradientButton(label: "Edit", maxW: 100)
                 }
             }
             else {
@@ -56,8 +50,8 @@ struct ScheduleCal : View {
     }
     
     func startUp() {
-        rkManager1.colors.monthHeaderColor = Color.blue
-        rkManager1.colors.weekdayHeaderColor = Color.blue
+        rkManager1.colors.monthHeaderColor = Color("ThriveBlue")
+        rkManager1.colors.weekdayHeaderColor = Color("ThriveBlue")
     }
     
     func getTextFromDate(date: Date!) -> String {

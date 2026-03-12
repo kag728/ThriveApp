@@ -74,7 +74,7 @@ struct TaskListView: View {
             Divider()
             NavigationLink(destination: ScheduleDayEditActivity(event: event)) {
                 Text("Edit")
-                    .foregroundColor(.blue)
+                    .foregroundColor(Color("ThriveBlue"))
                     .font(.title)
                     .multilineTextAlignment(.leading)
                     .padding()
@@ -82,7 +82,7 @@ struct TaskListView: View {
             }
             Button(action: {self.removeTask()}) {
                 Text("Remove")
-                    .foregroundColor(.blue)
+                    .foregroundColor(Color("ThriveBlue"))
                     .font(.title)
                     .multilineTextAlignment(.leading)
                     .padding()

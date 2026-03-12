@@ -56,13 +56,7 @@ struct ScheduleDayView: View {
             Spacer()
             Divider()
             NavigationLink(destination: ScheduleDayAddActivity(savedDay: selectedDate)) {
-                Text("+ Add Activity")
-                .foregroundColor(.white)
-                .font(.title)
-                .frame(minWidth: 0, maxWidth: 300)
-                .padding()
-                .background(LinearGradient(gradient: Gradient(colors: [Color("ThriveBlue"), Color(red: 3/255, green: 161/255, blue: 235/255)]), startPoint: .leading, endPoint: .trailing))
-                .cornerRadius(40)
+                thriveGradientButton(label: "+ Add Activity", maxW: 300)
             }
         }
         .onAppear(perform: readSchedule)

@@ -61,13 +61,7 @@ struct ToolboxView: View {
                     Text("\(heartRate, specifier: "%.0f")")
                 }.padding()
                 NavigationLink(destination: ToolboxAdd()){
-                    Text("+ Add Regulation Tool")
-                        .foregroundColor(.white)
-                        .font(.title)
-                        .frame(minWidth: 0, maxWidth: 300)
-                        .padding()
-                        .background(LinearGradient(gradient: Gradient(colors: [Color("ThriveBlue"), Color(red: 3/255, green: 161/255, blue: 235/255)]), startPoint: .leading, endPoint: .trailing))
-                        .cornerRadius(40)
+                    thriveGradientButton(label: "+ Add Regulation Tool", maxW: 300)
                 }
                 .padding(.top)
             }

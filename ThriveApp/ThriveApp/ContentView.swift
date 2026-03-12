@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var themeManager: ThemeManager
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -18,47 +20,50 @@ struct ContentView: View {
                 Text("Thrive")
                     .font(.largeTitle)
                     .fontWeight(.semibold)
+                    .foregroundColor(Color("ThriveText"))
                     .padding(5)
                 Text("Thriving on the Spectrum")
                     .font(.title)
+                    .foregroundColor(Color("ThriveText"))
                     .padding(5)
-                NavigationLink(destination: SignInView() ) {
-                    Text("Sign In")
-                        .foregroundColor(.white)
-                    .font(.title)
-                    .frame(minWidth: 0, maxWidth: 200)
-                    .padding()
-                    .background(LinearGradient(gradient: Gradient(colors: [Color("ThriveBlue"), Color(red: 3/255, green: 161/255, blue: 235/255)]), startPoint: .leading, endPoint: .trailing))
-                    .cornerRadius(40)
-
+                NavigationLink(destination: SignInView()) {
+                    thriveGradientButton(label: "Sign In", maxW: 200)
                 }.padding()
                 NavigationLink(destination: SignUpView()) {
-                    Text("Sign Up")
-                        .foregroundColor(.white)
-                    .font(.title)
-                    .frame(minWidth: 0, maxWidth: 200)
-                    .padding()
-                    .background(LinearGradient(gradient: Gradient(colors: [Color("ThriveBlue"), Color(red: 3/255, green: 161/255, blue: 235/255)]), startPoint: .leading, endPoint: .trailing))
-                    .cornerRadius(40)
+                    thriveGradientButton(label: "Sign Up", maxW: 200)
                 }
                 NavigationLink(destination: ChildProfileView()) {
-                    Text("Testing")
-                        .foregroundColor(.white)
-                    .font(.title)
-                    .frame(minWidth: 0, maxWidth: 200)
-                    .padding()
-                    .background(LinearGradient(gradient: Gradient(colors: [Color("ThriveBlue"), Color(red: 3/255, green: 161/255, blue: 235/255)]), startPoint: .leading, endPoint: .trailing))
-                    .cornerRadius(40)
+                    thriveGradientButton(label: "Testing", maxW: 200)
                 }.padding()
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color("ThriveBackground"))
         }
+        .preferredColorScheme(themeManager.colorScheme)
     }
+}
+
+/// Reusable gradient button used across views.
+func thriveGradientButton(label: String, maxW: CGFloat) -> some View {
+    Text(label)
+        .foregroundColor(.white)
+        .font(.title)
+        .frame(minWidth: 0, maxWidth: maxW)
+        .padding()
+        .background(
+            LinearGradient(
+                gradient: Gradient(colors: [Color("ThriveBlue"), Color("ThriveGradientEnd")]),
+                startPoint: .leading,
+                endPoint: .trailing
+            )
+        )
+        .cornerRadius(40)
 }
 
 
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(ThemeManager())
     }
 }

@@ -37,14 +37,7 @@ struct SignInView: View {
                     .padding(.all)
                     .frame(width: 300)
                 Button(action: {self.signInAuthentication(email: self.username, password: self.password)}) {
-                    Text("Sign In")
-                        .foregroundColor(.white)
-                        .font(.title)
-                        .frame(minWidth: 0, maxWidth: 140)
-                        .padding()
-                        .background(LinearGradient(gradient: Gradient(colors: [Color("ThriveBlue"), Color(red: 3/255, green: 161/255, blue: 235/255)]), startPoint: .leading, endPoint: .trailing))
-                        .cornerRadius(40)
-                    
+                    thriveGradientButton(label: "Sign In", maxW: 140)
                 }
             }
             else {

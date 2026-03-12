@@ -31,7 +31,7 @@ struct EventView: View {
                 Text(" \(getTextFromDate(date:event.end))").font(.subheadline)
                 
                 Text(event.title ?? "")
-                    .foregroundColor(.blue)
+                    .foregroundColor(Color("ThriveBlue"))
                     .font(.title)
                     .multilineTextAlignment(.leading)
                     .padding()

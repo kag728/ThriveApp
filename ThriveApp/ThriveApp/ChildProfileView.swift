@@ -11,6 +11,7 @@ import FirebaseAuth
 import Firebase
 
 struct ChildProfileView: View {
+    @EnvironmentObject var themeManager: ThemeManager
     
     func signOut(){
         let firebaseAuth = Auth.auth();
@@ -93,22 +94,27 @@ struct ChildProfileView: View {
             .padding(.top)
             Spacer()
             
+            // Dark mode picker
+            Picker("Appearance", selection: $themeManager.themeMode) {
+                Text("System").tag(ThemeMode.system)
+                Text("Light").tag(ThemeMode.light)
+                Text("Dark").tag(ThemeMode.dark)
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            .padding(.horizontal, 40)
+            .padding(.bottom, 8)
+            
             Button(action: {self.signOut()}) {
-                Text("Sign Out")
-                    .foregroundColor(.white)
-                    .font(.title)
-                    .frame(minWidth: 0, maxWidth: 150)
-                    .padding()
-                    .background(LinearGradient(gradient: Gradient(colors: [Color("ThriveBlue"), Color(red: 3/255, green: 161/255, blue: 235/255)]), startPoint: .leading, endPoint: .trailing))
-                    .cornerRadius(40)
+                thriveGradientButton(label: "Sign Out", maxW: 150)
             }
             .navigationBarTitle(Text("Adam's Profile"), displayMode: .inline)
         }
+        .background(Color("ThriveBackground").edgesIgnoringSafeArea(.all))
     }
 }
 
 struct ChildProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ChildProfileView()
+        ChildProfileView().environmentObject(ThemeManager())
     }
 }
