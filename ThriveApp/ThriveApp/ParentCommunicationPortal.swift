@@ -97,7 +97,7 @@ struct ParentCommunicationPortal: View {
                 .border(Color("ThriveText"), width: 1)
             
             Button(action: {self.appendPost(str: self.post)}) {
-                thriveGradientButton(label: "Post!", maxW: 130)
+                ThriveGradientButton(label: "Post!", maxW: 130)
             }
             .padding(.top)
         }

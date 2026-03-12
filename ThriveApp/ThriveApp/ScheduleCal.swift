@@ -28,7 +28,7 @@ struct ScheduleCal : View {
                 Text("Adam's Schedule").font(.largeTitle)
                 RKViewController(isPresented: self.$singleIsPresented, rkManager: self.rkManager1)
                 Button(action: {self.getTextFromDate(date: self.rkManager1.selectedDate)}) {
-                    thriveGradientButton(label: "Edit", maxW: 100)
+                    ThriveGradientButton(label: "Edit", maxW: 100)
                 }
             }
             else {

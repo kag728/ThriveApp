@@ -27,13 +27,13 @@ struct ContentView: View {
                     .foregroundColor(Color("ThriveText"))
                     .padding(5)
                 NavigationLink(destination: SignInView()) {
-                    thriveGradientButton(label: "Sign In", maxW: 200)
+                    ThriveGradientButton(label: "Sign In", maxW: 200)
                 }.padding()
                 NavigationLink(destination: SignUpView()) {
-                    thriveGradientButton(label: "Sign Up", maxW: 200)
+                    ThriveGradientButton(label: "Sign Up", maxW: 200)
                 }
                 NavigationLink(destination: ChildProfileView()) {
-                    thriveGradientButton(label: "Testing", maxW: 200)
+                    ThriveGradientButton(label: "Testing", maxW: 200)
                 }.padding()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -44,20 +44,25 @@ struct ContentView: View {
 }
 
 /// Reusable gradient button used across views.
-func thriveGradientButton(label: String, maxW: CGFloat) -> some View {
-    Text(label)
-        .foregroundColor(.white)
-        .font(.title)
-        .frame(minWidth: 0, maxWidth: maxW)
-        .padding()
-        .background(
-            LinearGradient(
-                gradient: Gradient(colors: [Color("ThriveBlue"), Color("ThriveGradientEnd")]),
-                startPoint: .leading,
-                endPoint: .trailing
+struct ThriveGradientButton: View {
+    let label: String
+    let maxW: CGFloat
+    
+    var body: some View {
+        Text(label)
+            .foregroundColor(.white)
+            .font(.title)
+            .frame(minWidth: 0, maxWidth: maxW)
+            .padding()
+            .background(
+                LinearGradient(
+                    gradient: Gradient(colors: [Color("ThriveBlue"), Color("ThriveGradientEnd")]),
+                    startPoint: .leading,
+                    endPoint: .trailing
+                )
             )
-        )
-        .cornerRadius(40)
+            .cornerRadius(40)
+    }
 }
 
 

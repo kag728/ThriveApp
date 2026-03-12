@@ -37,7 +37,7 @@ struct SignUpView: View {
                     .padding(.all)
                     .frame(width: 300)
                 Button(action: {self.signUpAuthentication(email: self.email, password: self.password)}) {
-                    thriveGradientButton(label: "Create account", maxW: 200)
+                    ThriveGradientButton(label: "Create account", maxW: 200)
                 }
             }
             else {

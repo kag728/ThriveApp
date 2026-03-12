@@ -56,7 +56,7 @@ struct ScheduleDayView: View {
             Spacer()
             Divider()
             NavigationLink(destination: ScheduleDayAddActivity(savedDay: selectedDate)) {
-                thriveGradientButton(label: "+ Add Activity", maxW: 300)
+                ThriveGradientButton(label: "+ Add Activity", maxW: 300)
             }
         }
         .onAppear(perform: readSchedule)

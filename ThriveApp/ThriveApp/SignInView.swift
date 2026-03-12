@@ -37,7 +37,7 @@ struct SignInView: View {
                     .padding(.all)
                     .frame(width: 300)
                 Button(action: {self.signInAuthentication(email: self.username, password: self.password)}) {
-                    thriveGradientButton(label: "Sign In", maxW: 140)
+                    ThriveGradientButton(label: "Sign In", maxW: 140)
                 }
             }
             else {

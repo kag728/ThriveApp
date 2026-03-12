@@ -103,9 +103,10 @@ struct ChildProfileView: View {
             .pickerStyle(SegmentedPickerStyle())
             .padding(.horizontal, 40)
             .padding(.bottom, 8)
+            .accessibilityLabel("Theme selection")
             
             Button(action: {self.signOut()}) {
-                thriveGradientButton(label: "Sign Out", maxW: 150)
+                ThriveGradientButton(label: "Sign Out", maxW: 150)
             }
             .navigationBarTitle(Text("Adam's Profile"), displayMode: .inline)
         }

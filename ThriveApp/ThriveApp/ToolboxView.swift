@@ -61,7 +61,7 @@ struct ToolboxView: View {
                     Text("\(heartRate, specifier: "%.0f")")
                 }.padding()
                 NavigationLink(destination: ToolboxAdd()){
-                    thriveGradientButton(label: "+ Add Regulation Tool", maxW: 300)
+                    ThriveGradientButton(label: "+ Add Regulation Tool", maxW: 300)
                 }
                 .padding(.top)
             }
