@@ -30,7 +30,7 @@ struct SignInView: View {
                 Text("Sign In")
                     .font(.title)
                     .padding()
-                TextField("Username", text: $username)
+                TextField("Email", text: $username)
                     .padding(.all)
                     .frame(width: 300)
                 SecureField("Password", text: $password)
