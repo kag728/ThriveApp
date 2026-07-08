@@ -24,6 +24,7 @@
 		7964A9C2244926D800A00A03 /* ScheduleDayEditActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964A9C1244926D800A00A03 /* ScheduleDayEditActivity.swift */; };
 		7971B0D523FA11AC0018201F /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7971B0D423FA11AC0018201F /* SignUpView.swift */; };
 		7971B0D723FA13A60018201F /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7971B0D623FA13A60018201F /* SignInView.swift */; };
+		B1A2C3D4E5F6A7B8C9D0E1F2 /* AuthValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2C3D4E5F6A7B8C9D0E1F3 /* AuthValidator.swift */; };
 		7972A500243218AA00AD7869 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7972A4FF243218AA00AD7869 /* PostView.swift */; };
 		7972A502243218F400AD7869 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7972A501243218F400AD7869 /* Post.swift */; };
 		797324972428357E00F7F36A /* ParentCommunicationPortal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797324962428357D00F7F36A /* ParentCommunicationPortal.swift */; };
@@ -73,6 +74,7 @@
 		7964A9C1244926D800A00A03 /* ScheduleDayEditActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDayEditActivity.swift; sourceTree = "<group>"; };
 		7971B0D423FA11AC0018201F /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		7971B0D623FA13A60018201F /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		B1A2C3D4E5F6A7B8C9D0E1F3 /* AuthValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthValidator.swift; sourceTree = "<group>"; };
 		7972A4FF243218AA00AD7869 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		7972A501243218F400AD7869 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		797324962428357D00F7F36A /* ParentCommunicationPortal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentCommunicationPortal.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				7977ACC523E4EBEC005C841D /* Preview Content */,
 				7971B0D423FA11AC0018201F /* SignUpView.swift */,
 				7971B0D623FA13A60018201F /* SignInView.swift */,
+				B1A2C3D4E5F6A7B8C9D0E1F3 /* AuthValidator.swift */,
 				A1DE6F50240CC10000196CD9 /* ChildProfileView.swift */,
 				797324962428357D00F7F36A /* ParentCommunicationPortal.swift */,
 				7972A4FF243218AA00AD7869 /* PostView.swift */,
@@ -388,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7971B0D523FA11AC0018201F /* SignUpView.swift in Sources */,
+				B1A2C3D4E5F6A7B8C9D0E1F2 /* AuthValidator.swift in Sources */,
 				A134E3FE243243E500A019F4 /* RewardBankView.swift in Sources */,
 				A193EE752443A0DD00A8CB44 /* ScheduleDayAddActivity.swift in Sources */,
 				761CDACB243AEFAE0057A736 /* ToolDetailView.swift in Sources */,
