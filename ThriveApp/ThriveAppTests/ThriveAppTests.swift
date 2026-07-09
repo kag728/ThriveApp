@@ -19,9 +19,44 @@ class ThriveAppTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    // MARK: - AuthValidator email tests
+
+    func testValidEmailAcceptsWellFormedAddress() {
+        XCTAssertTrue(AuthValidator.isValidEmail("user@example.com"))
+    }
+
+    func testValidEmailAcceptsSubdomains() {
+        XCTAssertTrue(AuthValidator.isValidEmail("user@mail.example.com"))
+    }
+
+    func testValidEmailRejectsMissingAtSign() {
+        XCTAssertFalse(AuthValidator.isValidEmail("userexample.com"))
+    }
+
+    func testValidEmailRejectsMissingDomain() {
+        XCTAssertFalse(AuthValidator.isValidEmail("user@"))
+    }
+
+    func testValidEmailRejectsEmptyString() {
+        XCTAssertFalse(AuthValidator.isValidEmail(""))
+    }
+
+    // MARK: - AuthValidator password tests
+
+    func testValidPasswordAcceptsSixCharacters() {
+        XCTAssertTrue(AuthValidator.isValidPassword("abc123"))
+    }
+
+    func testValidPasswordAcceptsMoreThanSixCharacters() {
+        XCTAssertTrue(AuthValidator.isValidPassword("securepassword"))
+    }
+
+    func testValidPasswordRejectsFiveCharacters() {
+        XCTAssertFalse(AuthValidator.isValidPassword("12345"))
+    }
+
+    func testValidPasswordRejectsEmptyString() {
+        XCTAssertFalse(AuthValidator.isValidPassword(""))
     }
 
     func testPerformanceExample() {
